@@ -1,0 +1,26 @@
+{% extends 'quotemaker/base.html' %}
+
+
+{% block content %}
+<h1>Product List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Part Number</th>
+      <th>Description</th>
+      <th>Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+      <td>{{ product.id }}</td>
+      <td>{{ product.part_number }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.rate }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

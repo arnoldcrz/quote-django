@@ -1,0 +1,140 @@
+{% extends 'quotemaker/base.html' %}
+
+{% block content %}
+<div class="quote-content" id="quote-content">
+  <div class="main-input">
+    <div class="left-input">
+      <div class="input">
+        <label for="name">Name:</label>
+        <input name="name" id="name" type="text" autocomplete="name">
+      </div>
+      <div class="input">
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation">
+      </div>
+      <div class="input">
+        <label for="company">Company:</label>
+        <input name="company" id="company" type="text" autocomplete="company">
+      </div>
+      <div class="input">
+        <label for="client-email">Email:</label>
+        <input type="email" id="client-email">
+      </div>
+      <div class="input">
+        <label for="client-tel">Phone:</label>
+        <input type="tel" id="client-tel">
+      </div>
+      <div class="input">
+        <label for="address">Address:</label>
+        <input name="address" id="address" type="text" autocomplete="address">
+      </div>
+      <div class="input">
+        <label for="rfq-no">RFQ No:</label>
+        <input type="text" id="rfq-no">
+      </div>
+    </div>
+    <div class="right-input">
+      <div class="input">
+        <label for="quote-no">Quote No:</label>
+        <input type="text" id="quote-no">
+      </div>
+      <div class="input">
+        <label for="quote-date">Quote Date:</label>
+        <input type="date" id="quote-date">
+      </div>
+      <div class="input">
+        <label for="validity">Validity:</label>
+        <input type="text" id="validity">
+      </div>
+      <div class="input">
+        <label for="payment">Payment:</label>
+        <input type="text" id="payment">
+      </div>
+      <div class=" input">
+        <label for="delivery">Delivery:</label>
+        <input type="text" id="delivery">
+      </div>
+      <div class=" input">
+        <label for="fob">FOB:</label>
+        <input type="text" id="fob">
+      </div>
+      <div class="input">
+        <label for="salesperson">Salesperson:</label>
+        <input type="text" id="salesperson">
+      </div>
+    </div>
+  </div>
+  <table class="table-container">
+    <div class="table-row header-row">
+      <div class="table-cell">Item No</div>
+      <div class="table-cell">Part number</div>
+      <div class="table-cell">Quantity</div>
+      <div class="table-cell">Description</div>
+      <div class="table-cell">Rate</div>
+      <div class="table-cell">Amount</div>
+    </div>
+  </table>
+  <div class="table-buttons">
+    <button class="add-button add-row">Add Row</button>
+    <button class="add-button add-section">Add Section</button>
+    <button class="add-button add-notes">Add Notes</button>
+    <button class="delete-button delete-row">Delete Row</button>
+    <button id="print-button" class="print-button print">Print Quote</button>
+    <button id="print-button-pdf" class="print-button print-pdf">Print PDF</button>
+  </div>
+  <div class="contract">
+    <div class="notes-container">
+      <div class="notes-title"></br></br>Notes:</div>
+      <div class="terms-condition" contenteditable="true">
+        <p></br>
+          1. The weight of the shipment is TBA.</br>
+          2. The packing dimensions are TBA.</br>
+          3. The manufacturer is Pem-Tech, and the country of origin is the USA.</br>
+          4. Customs duties and any local fees like VAT are to be paid by the customer.</br>
+          5. Certificate of origin & conformity will be provided upon request with OEM stamped.</br>
+          6. The cost of US chamber attestation per document is $160 if so requested.</br>
+          7. HS Code is <strong>9027100000</strong> for Gas Detection Parts
+        </p>
+      </div>
+    </div>
+    <div class="accounting">
+      <div class="quote-amount">
+        <label for="sub-total-value" class="sub-total">Sub Total:</label>
+        <input id="sub-total-value" class="account-option sub-total-value" value="0.00"></input>
+      </div>
+      <div class="quote-amount">
+        <label for="discount">Discount:</label>
+        <input type="number" id="discount" class="account-option no-arrows" value="0">
+      </div>
+      <div class="quote-amount">
+        <label for="vat">VAT Cost:</label>
+        <input type="number" id="vat" class="account-option no-arrows" value="0">
+      </div>
+      <div class="quote-amount">
+        <label for="freight">Freight Cost:</label>
+        <input type="number" id="freight" class="account-option no-arrows" value="0">
+      </div>
+      <div class="quote-amount">
+        <label for="total-due-value" class="total-due">Total Due US $:</label>
+        <input id="total-due-value" class="account-option total-due-value" value="0.00"></input>
+      </div>
+      <div class="quote-amount-checkbox">
+        <div class="checkbox">
+          <label for="toggle-discount">Discount:</label>
+          <input type="checkbox" id="toggle-discount" class="account-option-toggle">
+        </div>
+        <div class="checkbox">
+          <label for="toggle-vat">VAT:</label>
+          <input type="checkbox" id="toggle-vat" class="account-option-toggle">
+        </div>
+        <div class="checkbox">
+          <label for="toggle-freight">Freight:</label>
+          <input type="checkbox" id="toggle-freight" class="account-option-toggle">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+ 

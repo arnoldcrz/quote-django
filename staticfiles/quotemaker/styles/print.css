@@ -1,0 +1,9 @@
+@media print {
+
+  .table-buttons,
+  .checkbox {
+    display: none;
+  }
+
+
+}

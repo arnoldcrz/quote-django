@@ -1,0 +1,74 @@
+.contract {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  width: 500px;
+  font-style: italic;
+  color: #919297e3;
+}
+
+.notes-title {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.accounting {
+  display: flex;
+  background-color: transparent;
+  align-items: flex-end;
+  flex-direction: column;
+
+  font-size: 11px;
+  padding-right: 10px;
+}
+
+.quote-amount,
+.quote-amount-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+.quote-amount-checkbox {
+  font-size: 10px;
+  font-style: italic;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(150, 149, 154);
+  width: 195px;
+  justify-content: space-evenly;
+  color: rgb(148, 146, 142);
+}
+
+.account-option {
+  width: 70px;
+  text-align: right;
+  margin-left: 10px;
+  font-size: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.sub-total,
+.sub-total-value {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.total-due,
+.total-due-value {
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+

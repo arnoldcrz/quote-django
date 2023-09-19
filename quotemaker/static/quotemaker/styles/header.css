@@ -1,0 +1,41 @@
+.main-header {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(228, 228, 228);
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 50px;
+  margin-top: 3px;
+}
+
+.company-details {
+  min-width: 200px;
+  max-width: 200px;
+  font-size: 10px;
+  color: rgb(189, 181, 181);  
+  margin-left: 10px;
+  flex-wrap: wrap;
+  
+
+}
+
+.title {
+  flex: 1;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: right;
+}

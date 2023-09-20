@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +11,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/quote-details.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/general.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/header.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/accounting.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/quote-table.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/footer.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'quotemaker/styles/print.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/quote-details.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/general.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/accounting.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/quote-table.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/print.css' %}">
 
 </head>
 
 <body>
-  <header class="main-header" id="main-header">
+  <header class="main-header" id="ma
     <div class="main-header-logo">
       <a href="index.html" class="header-link">
-        <img src="images/pemtech-logo.svg" class="logo">
+        <img src="{% static 'images/pemtech-logo.svg' %}" class="logo">
       </a>
     </div>
     <div class="company-details">
@@ -54,11 +56,11 @@
   </footer>
 
 
-  <script type="module" src="{% static 'quotemaker/scripts/main.js' %}"></script>
-  <script type="module" src="{% static 'quotemaker/scripts/add-row.js' %}"></script>
-  <script type="module" src="{% static 'quotemaker/scripts/checkbox.js' %}"></script>
-  <script type="module" src="{% static 'quotemaker/scripts/print.js' %}"></script>
-  <script type="module" src="{% static 'quotemaker/scripts/print-pdf.js' %}"></script>
+  <script type="module" src="{% static 'scripts/main.js' %}"></script>
+  <script type="module" src="{% static 'scripts/add-row.js' %}"></script>
+  <script type="module" src="{% static 'scripts/checkbox.js' %}"></script>
+  <script type="module" src="{% static 'scripts/print.js' %}"></script>
+  <script type="module" src="{% static 'scripts/print-pdf.js' %}"></script>
 
 
 </body>

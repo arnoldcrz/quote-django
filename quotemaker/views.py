@@ -9,8 +9,8 @@ def product_list(request):
 
 
 def quote(request):
-    return render(request, 'quote_table.html')
+    return render(request, 'quotemaker/quote_table.html')
 
 
 def home(request):
-    return render(request, 'home_page.html')
+    return render(request, 'quotemaker/home_page.html')

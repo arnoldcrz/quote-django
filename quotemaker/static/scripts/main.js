@@ -1,17 +1,17 @@
 import { initializePartNumberInput, addRowToTable } from "./functions.js";
-import { updateAmount, updateSubTotalAndTotalDue } from "./accounting.js";
+import { updateSubTotalAndTotalDue } from "./accounting.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const addButton = document.querySelector('.add-row');
   const tableContainer = document.querySelector('.table-container');
 
-  let data = []; // Initialize an empty array for the data
+  let data = [];
 
-  fetch('backend/products.json') // Replace with your JSON file path
+  fetch('/product-list-json/')
     .then(response => response.json())
     .then(fetchedData => {
-      data = fetchedData; // Assign the fetched data to the global data variable
+      data = fetchedData;
 
       const partNumberInputs = document.querySelectorAll('.part-number');
       partNumberInputs.forEach(input => {

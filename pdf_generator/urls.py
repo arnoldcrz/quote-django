@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
+from .views import generate_pdf
+
+app_name = 'pdf_generator'
 
 urlpatterns = [
-    path('product-list/', views.product_list, name='product_list'),
-    path('product-list-json/', views.product_list_json, name='product_list_json'),
     path('home/', views.home, name='home'),
     path('quote/', views.quote, name='quote'),
+    path('generate-pdf/', generate_pdf, name='generate_pdf'),
 
 ]

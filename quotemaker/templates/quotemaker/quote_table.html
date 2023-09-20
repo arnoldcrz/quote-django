@@ -1,4 +1,6 @@
 {% extends 'quotemaker/base.html' %}
+{% load static %}
+{% block title %}Quote{% endblock %}
 
 {% block content %}
 <div class="quote-content" id="quote-content">
@@ -64,23 +66,23 @@
       </div>
     </div>
   </div>
-  <table class="table-container">
+  <quotetable class="table-container">
     <div class="table-row header-row">
       <div class="table-cell">Item No</div>
       <div class="table-cell">Part number</div>
       <div class="table-cell">Quantity</div>
       <div class="table-cell">Description</div>
       <div class="table-cell">Rate</div>
-      <div class="table-cell">Amount</div>
+      <div class="table-cell table-cell-amount">Amount</div>
     </div>
-  </table>
+  </quotetable>
   <div class="table-buttons">
     <button class="add-button add-row">Add Row</button>
     <button class="add-button add-section">Add Section</button>
     <button class="add-button add-notes">Add Notes</button>
     <button class="delete-button delete-row">Delete Row</button>
     <button id="print-button" class="print-button print">Print Quote</button>
-    <button id="print-button-pdf" class="print-button print-pdf">Print PDF</button>
+    {% comment %} <button id="print-button-pdf" class="print-button print-pdf">Print PDF</button> {% endcomment %}
   </div>
   <div class="contract">
     <div class="notes-container">
@@ -135,6 +137,12 @@
     </div>
   </div>
 </div>
+
+<script type="module" src="{% static 'scripts/main.js' %}"></script>
+<script type="module" src="{% static 'scripts/add-row.js' %}"></script>
+<script type="module" src="{% static 'scripts/checkbox.js' %}"></script>
+<script type="module" src="{% static 'scripts/print.js' %}"></script>
+{% comment %} <script type="module" src="{% static 'scripts/print-pdf.js' %}"></script> {% endcomment %}
 {% endblock %}
 
  

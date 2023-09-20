@@ -11,8 +11,8 @@ export function initializePartNumberInput(input, data) {
 
   data.forEach(part => {
     const option = document.createElement('option');
-    option.value = part["Part Number"];
-    option.text = part["Part Number"];
+    option.value = part.part_number;
+    option.text = part.part_number;
     input.appendChild(option);
   });
 
@@ -23,19 +23,19 @@ export function initializePartNumberInput(input, data) {
 
   input.addEventListener('change', event => {
     const selectedPartNumber = event.target.value;
-    const selectedPart = data.find(part => part["Part Number"] === selectedPartNumber);
+    const selectedPart = data.find(part => part.part_number === selectedPartNumber);
     const row = input.closest('.table-row');
-    const descriptionDiv = row.querySelector('.description'); // Select the description div
+    const descriptionDiv = row.querySelector('.description');
     const rateDiv = row.querySelector('.rate');
 
     if (selectedPart && selectedPartNumber !== "Other") {
-      descriptionDiv.textContent = selectedPart.Description; // Set description text
-      rateDiv.textContent = selectedPart.Rate;
+      descriptionDiv.textContent = selectedPart.description;
+      rateDiv.textContent = selectedPart.rate;
     } else if (selectedPartNumber === "Other") {
-      descriptionDiv.textContent = ''; // Clear description text
+      descriptionDiv.textContent = '';
       rateDiv.textContent = '';
     } else {
-      descriptionDiv.textContent = ''; // Clear description text
+      descriptionDiv.textContent = '';
       rateDiv.textContent = '';
     }
   });
@@ -94,12 +94,23 @@ export function addRowToTable(tableContainer, data) {
       partNumberInput.classList.add('part-number');
       partNumberInput.placeholder = 'Enter part number';
       newPartNumberSelect.replaceWith(partNumberInput);
+
       partNumberInput.addEventListener('change', () => {
-        const newPartNumber = partNumberInput.value;
-        if (newPartNumber.trim() !== '') {
+        const newPartNumber = partNumberInput.value.trim();
+        if (newPartNumber !== '') {
           const descriptionInput = row.querySelector('.description');
           const rateInput = row.querySelector('.rate');
 
+          // Find the selected part based on the newPartNumber
+          const selectedPart = data.find(part => part.part_number === newPartNumber);
+
+          if (selectedPart) {
+            descriptionInput.textContent = selectedPart.description;
+            rateInput.textContent = selectedPart.rate;
+          } else {
+            descriptionInput.textContent = '';
+            rateInput.textContent = '0.00';
+          }
           updateAmount(row);
           updateSubTotalAndTotalDue();
         }

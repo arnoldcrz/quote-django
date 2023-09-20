@@ -7,7 +7,7 @@
   <title>{% block title %}Quote Maker{% endblock %}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,9 +22,9 @@
 </head>
 
 <body>
-  <header class="main-header" id="ma
+  <header class="main-header" id="main-header">
     <div class="main-header-logo">
-      <a href="index.html" class="header-link">
+      <a href="" class="header-link">
         <img src="{% static 'images/pemtech-logo.svg' %}" class="logo">
       </a>
     </div>
@@ -54,15 +54,6 @@
         281-494-2167</p>
     </div>
   </footer>
-
-
-  <script type="module" src="{% static 'scripts/main.js' %}"></script>
-  <script type="module" src="{% static 'scripts/add-row.js' %}"></script>
-  <script type="module" src="{% static 'scripts/checkbox.js' %}"></script>
-  <script type="module" src="{% static 'scripts/print.js' %}"></script>
-  <script type="module" src="{% static 'scripts/print-pdf.js' %}"></script>
-
-
 </body>
 
 </html>

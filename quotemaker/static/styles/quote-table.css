@@ -16,7 +16,11 @@
   flex-direction: row;
   border-bottom: 1px solid #ccc;
   padding: 5px 0;
-  /*page-break-inside: avoid;*/
+}
+
+.table-cell-amount {
+  margin-right: 10px;
+
 }
 
 .header-row {

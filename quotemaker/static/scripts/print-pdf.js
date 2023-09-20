@@ -1,5 +1,6 @@
+
 document.getElementById('print-button-pdf').addEventListener('click', () => {
-  const pdf = new PDF('p', 'mm', 'a4');
+  const pdf = new jsPDF('p', 'mm', 'a4');
   const content = document.getElementById('page-content');
 
   const header = '<div style="text-align: center;">My Custom Header</div>';

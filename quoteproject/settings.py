@@ -25,11 +25,7 @@ SECRET_KEY = "django-insecure-m*k8f+kfqnb#)p%+x)0qh2h#cd@ak0a0g&)v36zfud9yyve+^-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
+
 
 ALLOWED_HOSTS = []
 

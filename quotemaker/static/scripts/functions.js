@@ -1,4 +1,3 @@
-import { formatCurrency } from "./utils/currency.js";
 import { updateAmount, updateSubTotalAndTotalDue } from "./accounting.js";
 
 export function initializePartNumberInput(input, data) {
@@ -42,25 +41,30 @@ export function initializePartNumberInput(input, data) {
 }
 
 export function addRowToTable(tableContainer, data) {
-  const newRow = document.createElement('div');
+  const tbody = tableContainer.querySelector('tbody');
+  if (!tbody) {
+    console.error('Table does not have a tbody element.');
+    return;
+  }
+
+  const currentRowCount = tbody.querySelectorAll('.table-row').length + 1;
+  const newRow = document.createElement('tr');
   newRow.classList.add('table-row');
 
-  const currentRowCount = document.querySelectorAll('.table-row').length + 1;
-
   newRow.innerHTML = `
-    <div class="table-cell">${currentRowCount - 1}</div>
-    <div class="table-cell">
-      <select id="part-number-${currentRowCount - 1}" class="part-number">
+    <td class="table-cell">${currentRowCount}</td>
+    <td class="table-cell">
+      <select id="part-number-${currentRowCount}" class="part-number">
         <option value="" disabled selected>Choose a part number</option>
       </select>
-    </div>
-    <div class="table-cell"><input id="quantity-${currentRowCount - 1}" type="number" class="quantity no-arrows" value="0"></div>
-    <div class="table-cell description" contenteditable="true"></div>
-    <div class="table-cell rate" contenteditable="true">0.00</div>
-    <div class="table-cell amount">0.00</div>
+    </td>
+    <td class="table-cell"><input id="quantity-${currentRowCount}" type="number" class="quantity no-arrows" value="0"></td>
+    <td class="table-cell description" contenteditable="true"></td>
+    <td class="table-cell rate" contenteditable="true">0.00</td>
+    <td class="table-cell amount">0.00</td>    
   `;
 
-  tableContainer.appendChild(newRow);
+  tbody.appendChild(newRow);
 
   const newPartNumberInput = newRow.querySelector('.part-number');
   initializePartNumberInput(newPartNumberInput, data);

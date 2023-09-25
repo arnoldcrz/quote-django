@@ -6,8 +6,9 @@
 <head>
   <title>{% block title %}Quote Maker{% endblock %}</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="text/html; charset=utf-8" http-equiv="Content-Type">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,41 +23,10 @@
 </head>
 
 <body>
-  <header class="main-header" id="main-header">
-    <div class="main-header-logo">
-      <a href="" class="header-link">
-        <img src="{% static 'images/pemtech-logo.svg' %}" class="logo">
-      </a>
-    </div>
-    <div class="company-details">
-      <p><strong>PEMTECH Inc</strong></br>12144 Dairy Ashford Road</br>Sugar Land TX 77478 United States</p>
-    </div>
-    <div class="title">
-      QUOTATION
-    </div>
-  </header>
-  <main class="page-main" id="page-main">
-  
-  </main>
-  <footer class="page-footer" id="page-footer">
-    <div class="footer-content">
-      <div class="footer-item pemtech-website">
-        <a href="https://pem-tech.com" class="pemtech-link">
-          https://pem-tech.com
-        </a>
-      </div>
-      <div class="footer-item pemtech-email">Email: info.me@pem-tech.com</div>
-      <div class="footer-item pemtech-phone">Phone: +97142585343</div>
-    </div>
-    <div class="page"></div>
-    <div class="us-phone">
-      <p><strong>Toll Free:</strong> 800-379-3894<br><Strong>Phone:</Strong> 281-494-2079<br><strong>Fax:</strong>
-        281-494-2167</p>
-    </div>
-  </footer>
-
-    
-  </script>
+  <h1>Welcome</h1>
+  <div id="content">
+    <!-- The captured HTML content will be inserted here -->
+</div>
 </body>
 
 </html>

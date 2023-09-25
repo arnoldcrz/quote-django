@@ -1,13 +1,14 @@
 import { updateAmount, updateSubTotalAndTotalDue } from "./accounting.js";
 
+const tableContainer = document.querySelector('tbody');
 
 document.addEventListener('DOMContentLoaded', () => {
   const addSectionButton = document.querySelector('.add-section');
-  const tableContainer = document.querySelector('.table-container');
+
 
   addSectionButton.addEventListener('click', () => {
-    const sectionDivider = document.createElement('div');
-    sectionDivider.classList.add('table-container', 'section-divider');
+    const sectionDivider = document.createElement('tr');
+    sectionDivider.classList.add('divider', 'row-divider');
     sectionDivider.innerHTML = `
       <div class="table-cell section-cell" colspan="6">
         <input type="text" class="section-title">
@@ -18,32 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const addNotesButton = document.querySelector('.add-notes');
-  const tableContainer = document.querySelector('.table-container');
 
   addNotesButton.addEventListener('click', () => {
-    const notesDivider = document.createElement('div');
-    notesDivider.classList.add('table-container', 'notes-divider');
+    const notesDivider = document.createElement('tr');
+    notesDivider.classList.add('divider', 'row-notes');
     notesDivider.innerHTML = `
-      <div class="table-cell notes" contenteditable="true">Notes: </div>
-      <div class="table-cell notes-line" contenteditable="true">1.</div>`;
+      <div class="table-cell notes" contenteditable="true">Notes:</br> 1. </div>`;
     tableContainer.appendChild(notesDivider);
   });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const deleteButton = document.querySelector('.delete-row');
-  const tableContainer = document.querySelector('.table-container');
 
   deleteButton.addEventListener('click', () => {
     const rows = tableContainer.querySelectorAll('.table-row');
-    const sectionDividers = tableContainer.querySelectorAll('.section-divider');
-    const notesDividers = tableContainer.querySelectorAll('.notes-divider');
+    const sectionDividers = tableContainer.querySelectorAll('.row-divider');
+    const notesDividers = tableContainer.querySelectorAll('.row-notes');
 
     if (rows.length > 0 || sectionDividers.length > 0) {
       const lastRow = tableContainer.lastChild;
       if (lastRow.classList.contains('table-row') ||
-        lastRow.classList.contains('section-divider') ||
-        lastRow.classList.contains('notes-divider')) {
+        lastRow.classList.contains('row-divider') ||
+        lastRow.classList.contains('row-notes')) {
         tableContainer.removeChild(lastRow);
 
         updateSubTotalAndTotalDue();

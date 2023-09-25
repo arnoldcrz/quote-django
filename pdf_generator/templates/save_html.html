@@ -1,0 +1,11 @@
+{% extends 'quotemaker/base.html' %}  <!-- If you have a base template -->
+
+{% block content %}
+<h2>Add HTML Content</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'html_list' %}">Back to HTML List</a>
+{% endblock %}

@@ -18,9 +18,9 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("", include("quotemaker.urls")),
-    path("", include('pdf_generator.urls', namespace='pdf_generator')),
-    path("admin/", admin.site.urls),
+    path('', include("quotemaker.urls")),
+    path('', include('pdf_generator.urls')),
+    path('admin/', admin.site.urls),
 
 
 ]

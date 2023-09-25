@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  $("#print-button").on("click", function () {
+  $("#save-button").on("click", function () {
     console.log("PDF button clicked.");
 
     // Capture the HTML content you want to include in the PDF
-    var htmlContent = $("body").html();
+    var capturedHtml = $('content').html();
     console.log("Captured HTML content:", htmlContent); // Log the captured content
 
     // Get the CSRF token from the cookie
@@ -17,19 +17,17 @@ $(document).ready(function () {
     // Send the HTML content to the Django view via AJAX
     $.ajax({
       type: "POST",
-      url: "/pdf/",
-      data: JSON.stringify({ html_content: htmlContent }),
-      contentType: "application/json; charset=utf-8",
-      headers: headers, // Include CSRF token in headers
-      success: function (response) {
-        // Open the generated PDF in a new tab
-        window.open(response.pdf_url, "_blank");
+      url: "/save-html/",
+      data: { captured_html: capturedHtml },
+      success: function (data) {
+        alert('HTML structure saved successfully.');
       },
-      error: function (err) {
-        console.error("Error generating PDF:", err);
+      error: function (error) {
+        alert('Error saving HTML structure.');
       }
     });
   });
+
 
   // Function to get a cookie by name
   function getCookie(name) {
